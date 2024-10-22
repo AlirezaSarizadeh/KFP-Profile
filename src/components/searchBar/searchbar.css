@@ -1,0 +1,16 @@
+/* search animation */
+.page-search-container {
+    border: 1px solid transparent !important;
+    border-radius: 25px !important;
+    padding: 4px 10px;
+    /* width: 25%; */
+    overflow: hidden;
+    flex-wrap: nowrap;
+    width: 85px;
+    transition: .3s ease;
+}
+
+.search-Active {
+    border: 1px solid #fff !important;
+    width: 250px;
+}

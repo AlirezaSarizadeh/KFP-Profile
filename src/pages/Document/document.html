@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/dentistPage.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <title>KFP dentist</title>
+</head>
+
+<body>
+    <section class="dentist-container" style="background-image: url('./assets/images/auth-bg.png');">
+        <div class="row dentist-div justify-content-center">
+
+            <!-- side bar -->
+            <div class="col-lg-5 d-flex align-items-center justify-content-center dentist-left-side flex-column">
+                <div class="mt-lg-5 m-auto">
+                    <h3
+                        class="fs-2 text-center fw-extrabold d-flex align-items-center justify-content-start gap-lg-5 gap-2">
+                        <img src="./assets/images/prev-ico.png" alt="">
+                        Dentist Page
+                    </h3>
+                    <a href=""
+                        class="d-flex align-items-center justify-content-center flex-column mt-lg-5 gap-lg-5 gap-3 large-shadow br-25">
+                        <!-- category box -->
+                        <div class="category-box doc-category-box position-relative po" >
+                            <h3 class="fw-extrabold position-absolute">Documents</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- heading -->
+            <div
+                class="col-lg-7 d-flex flex-column align-items-start justify-content-start p-lg-5 dentist-container-results ">
+                <div class="d-flex align-items-center justify-content-between w-100">
+
+                    <div class="d-flex flex-column justify-content-center align-items-start">
+
+                        <h3
+                            class="fs-2 f-inter text-light fw-extrabold d-flex align-items-center justify-content-center gap-2">
+                            Sina Center
+                        </h3>
+                        <!-- <a href="#!" class="d-flex justify-content-center align-items-center gap-2 primaryColor">
+                            Recent videos
+                            <img src="./assets/images/recent-ico.png" alt="">
+                        </a> -->
+
+                    </div>
+                    <div class="search-container ms-auto me-lg-4 ">
+                        <div
+                            class="input-group page-search-container rounded d-flex align-items-center justify-content-center gap-2">
+                            <input type="search" class="form-control search-input search-input-v2"
+                                placeholder="type something..." />
+                            <span class="search-btn" id="search-addon">
+                                <img src="./assets/images/search-ico.png" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <button type="submit" class="sweet-btn sweet-btn-v2">
+                        Logout
+                        <img src="./assets/images/logout-ico.png" alt="">
+                    </button>
+                </div>
+                <div class="mt-lg-5 m-auto row row-cols-1 w-100">
+
+                    <pdf-viewer src="compressed.tracemonkey-pldi-09.pdf"></pdf-viewer>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const template = document.createElement("template");
+    template.innerHTML = `
+  <iframe frameborder="0" 
+    width="100%" 
+    height="650">
+  </iframe>
+`;
+
+    class PdfViewer extends HTMLElement {
+        constructor() {
+            super();
+            const shadowRoot = this.attachShadow({ mode: "open" });
+            shadowRoot.appendChild(template.content.cloneNode(true));
+        }
+        get observedAttributes() {
+            return ["src"];
+        }
+        connectedCallback() {
+            this.updateIframeSrc();
+        }
+        attributeChangedCallback(name) {
+            if (["src", "viewerPath"].includes(name)) {
+                this.updateIframeSrc();
+            }
+        }
+        updateIframeSrc() {
+            this.shadowRoot
+                .querySelector("iframe")
+                .setAttribute(
+                    "src",
+                    `https://mozilla.github.io/pdf.js/web/viewer.html?file=${this.getAttribute("src") || ""
+                    }`
+                );
+        }
+    }
+    window.customElements.define("pdf-viewer", PdfViewer);
+
+</script>
+
+</html>

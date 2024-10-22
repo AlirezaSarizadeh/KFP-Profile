@@ -1,0 +1,452 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+  background-repeat: no-repeat;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+  font-family: Rubik;
+}
+
+@font-face {
+  font-family: abhaya;
+  src: url(./assets/fonts/AbhayaLibre-ExtraBold.ttf);
+  font-weight: 900;
+}
+
+.fw-extra-bold {
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: abhaya;
+  src: url(./assets//fonts/AbhayaLibre-Bold.ttf);
+  font-weight: 800;
+}
+
+.fw-bold {
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: abhaya;
+  src: url(./assets//fonts/AbhayaLibre-SemiBold.ttf);
+  font-weight: 700;
+}
+
+.fw-semi-bold {
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: abhaya;
+  src: url(./assets//fonts/AbhayaLibre-Medium.ttf);
+  font-weight: 600;
+}
+
+.fw-medium {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: abhaya;
+  src: url(./assets//fonts/AbhayaLibre-Regular.ttf);
+  font-weight: 500;
+}
+
+.fw-regular {
+  font-weight: 500;
+}
+
+
+/* Rubik Font */
+
+
+@font-face {
+  font-family: Rubik;
+  src: url(./assets/fonts/Rubik-ExtraBold.ttf);
+  font-weight: 900;
+}
+
+.fw-extra-bold {
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url(./assets/fonts/Rubik-Bold.ttf);
+  font-weight: 800;
+}
+
+.fw-bold {
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url(./assets/fonts/Rubik-SemiBold.ttf);
+  font-weight: 700;
+}
+
+.fw-semi-bold {
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url(./assets/fonts/Rubik-Medium.ttf);
+  font-weight: 600;
+}
+
+.fw-medium {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url(./assets/fonts/Rubik-Regular.ttf);
+  font-weight: 500;
+}
+
+.fw-regular {
+  font-weight: 500;
+}
+
+/* End Rubik Ends */
+
+@font-face {
+  font-family: inter;
+  src: url(./assets/fonts/Inter_18pt-Light.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: inter;
+  src: url(../fonts/Inter_18pt-Medium.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: inter;
+  src: url(../fonts/Inter-VariableFont_opsz\,wght.ttf);
+  font-weight: 700;
+}
+
+.f-inter {
+  font-family: Rubik;
+}
+
+html,
+body {
+  font-family: Rubik;
+  overflow-x: hidden;
+}
+
+:root {
+  --primaryColor: #91d2d5;
+
+}
+
+.primaryColor {
+  color: var(--primaryColor) !important;
+}
+
+.btn:active,
+.btn:focus {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.primaryColorDark {
+  color: #6c9c9f;
+}
+
+/* butoons */
+.sweet-btn {
+  cursor: pointer;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px 30px;
+  gap: 3px;
+  background-color: #837f7d;
+  color: #00696D;
+  font-family: Rubik;
+  font-weight: 700;
+  transition: 0.3s ease-in-out;
+  -webkit-box-shadow: inset 1px 2px 5px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: inset 1px 2px 5px 1px rgba(0, 0, 0, 0.33);
+  box-shadow: inset 1px 2px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.sweet-btn img {
+  transition: 0.3s ease-in-out;
+}
+
+.sweet-btn:hover {
+  background-color: #00696D;
+  color: #fff;
+}
+
+.sweet-btn:hover img {
+  filter: brightness(2);
+}
+
+.sweet-btn-v2:hover img {
+  filter: brightness(20);
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.sweet-btn-v2 {
+  background-color: #91d2d5;
+  color: #333;
+  padding: 12px 28px;
+  border: none;
+}
+
+.fs-1 {
+  font-size: 3.5rem !important;
+}
+
+.large-shadow {
+  box-shadow: rgba(0, 0, 0, 0.76) 0px 22px 70px 4px;
+}
+
+.br-25 {
+  border-radius: 25px;
+}
+
+.search-input-v2:focus {
+  background: transparent;
+  color: #fff;
+}
+
+.card-item-top-x {
+  width: 235px;
+  height: 156px;
+  object-fit: contain;
+  padding: 10px;
+  margin: auto;
+}
+
+.card-item-top-x+.card-body h5 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.goBackHistory {
+  cursor: pointer;
+}
+
+.menu-dropdown::after {
+  display: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.card-title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.card-img-top {
+  max-width: 250px;
+  max-height: 185px;
+  object-fit: cover;
+}
+
+.card {
+  max-width: 250px;
+  max-width: 250px;
+  border-radius: 21px;
+  overflow: hidden;
+}
+
+.mt-lg-5.row.row-cols-lg-3.row-cols-2.w-100 .p-2 {
+  max-width: 250px;
+}
+
+/* responsive */
+@media(min-width:900px) {
+  .history-800-hidden {
+    display: none;
+  }
+  .menu-dropdown{
+    display: none;
+  }
+}
+
+@media(max-width:1100px) {
+
+  .fs-1 {
+    font-size: 2.5rem !important;
+  }
+
+  .sweet-btn {
+    padding: 10px 12px;
+  }
+
+  .sweet-btn img {
+    width: 30px;
+  }
+
+  .home-content {
+    max-width: 100%;
+  }
+
+  .home-content h1 {
+    line-height: 1.7;
+    font-size: 70px;
+  }
+
+  .dentist-container-results {
+    padding: 50px !important;
+  }
+
+  .search-Active {
+    width: 220px;
+  }
+}
+
+/* responsive */
+@media(max-width:768px) {
+
+  .search-Active {
+    width: 150px;
+    /* height: 40px; */
+  }
+
+  .fs-1 {
+    font-size: 2.5rem !important;
+  }
+
+  .sweet-btn {
+    padding: 10px 12px;
+  }
+
+  .sweet-btn img {
+    width: 30px;
+  }
+
+  .dentist-container-results {
+    padding: 30px !important;
+    align-items: center !important;
+  }
+
+  .goBackHistory {
+    width: 20px;
+  }
+
+  .sweet-btn img {
+    width: 20px;
+  }
+
+  .card-title {
+    font-size: 13px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .card-text {
+    font-size: 13px;
+  }
+
+  .card .text-end {
+    text-align: right !important;
+    font-size: 13px;
+  }
+}

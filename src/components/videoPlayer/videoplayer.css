@@ -1,0 +1,34 @@
+media-controller {
+  --media-primary-color: #ffffff;
+  --media-secondary-color: rgb(27 54 93 / 0.85);
+  --media-control-hover-background: #91d2d5;
+}
+
+/* This is how to style the "top-chrome" components differently */
+media-controller [slot="top-chrome"] {
+  --media-control-padding: 5px;
+}
+
+/* This is how to style the "centered-chrome" components differently */
+media-controller [slot="centered-chrome"] {
+  border-radius: 50%;
+  /* You could also use standard CSS properties for several of these */
+  --media-control-padding: 2px;
+  --media-control-height: 40px;
+}
+
+/* Do not show the airplay button unless AirPlay is available */
+media-airplay-button[mediaairplayunavailable] {
+  display: none;
+}
+
+/* Do not show the captions button if there are no captions for the media */
+media-captions-button:not([mediasubtitleslist]) {
+  display: none;
+}
+
+@media(max-width:768px) {
+  media-seek-forward-button , media-seek-backward-button{
+    display: none;
+  }
+}
